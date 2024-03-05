@@ -9,12 +9,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String appName = "elektroland.acrob";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
     }
 
 
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         PackageManager packageManager = getPackageManager();
-        Intent launchIntent = packageManager.getLaunchIntentForPackage("elektroland.acrob");
+        Intent launchIntent = packageManager.getLaunchIntentForPackage(appName);
 
         if (launchIntent != null) {
             startActivity(launchIntent);
